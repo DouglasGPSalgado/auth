@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <div class="login-page">
+    <head>
+      <meta charset="UTF-8" />
+      <title>Home</title>
+    </head>
+    <link rel="stylesheet" href="style.css"/>
+    <div class="form">
+      <form class="login_form" action="submit" method="POST">
+        {% csrf_token %}
+        <input placeholder="Username" type="text" name="username" />
+        <input placeholder="Password" type="password" name="password" />
+        <button type="submit">Login</button>
+      </form>
+      {% for message in messages %}
+      <div align="center"><strong>Error!</strong> {{ message }}</div>
+      {% endfor %}
+    </div>
+  </div>
+</html>
+
